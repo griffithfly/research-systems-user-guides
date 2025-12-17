@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Data Finder - User Guideline</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #eef2f6 100%);
+            color: #0f172a;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 32px 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        @media (min-width: 960px) {
+            .grid {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        /* Left Column - Guideline Content */
+        .guideline-content {
+            /* Content will scroll normally */
+        }
+
+        /* Right Column - Login Form */
+        .login-sidebar {
+            position: relative;
+        }
+
+        @media (min-width: 960px) {
+            .login-sidebar {
+                position: sticky;
+                top: 24px;
+                align-self: start;
+                max-height: calc(100vh - 48px);
+                overflow-y: auto;
+            }
+        }
+
+        /* Paper/Card Styles */
+        .paper {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 32px;
+            margin-bottom: 32px;
+        }
+
+        .paper-login {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+            padding: 32px;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 16px;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 24px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 16px;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        p {
+            color: #475569;
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-muted {
+            color: #64748b;
+        }
+
+        /* Header Section */
+        .header-paper {
+            text-align: center;
+        }
+
+        .header-paper h1 {
+            margin-bottom: 8px;
+        }
+
+        .header-paper h3 {
+            color: #475569;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        /* Section Headers */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .section-icon {
+            width: 32px;
+            height: 32px;
+            color: #612cf5;
+        }
+
+        /* Images */
+        .screenshot {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .screenshot-small {
+            width: 75%;
+            margin: 0 auto;
+        }
+
+        .screenshot-center {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Lists */
+        .list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .list-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .list-icon {
+            color: #612cf5;
+            margin-top: 4px;
+        }
+
+        .list-content strong {
+            color: #0f172a;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .list-content span {
+            color: #64748b;
+        }
+
+        /* Divider */
+        .divider {
+            border: none;
+            border-top: 1px solid #e2e8f0;
+            margin: 32px 0;
+        }
+
+        /* Alert Boxes */
+        .alert {
+            padding: 16px;
+            border-radius: 4px;
+            margin: 16px 0;
+        }
+
+        .alert-warning {
+            background-color: #fef3c7;
+            border: 1px solid #fbbf24;
+        }
+
+        .alert-warning p {
+            color: #78350f;
+            margin: 0;
+        }
+
+        .alert-info {
+            background-color: #dbeafe;
+            border: 1px solid #3b82f6;
+        }
+
+        .alert-info p {
+            color: #1e40af;
+            margin: 0;
+        }
+
+        /* Login Form Styles */
+        .login-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .login-icon-circle {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background-color: #ede9fe;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+
+        .login-icon {
+            width: 32px;
+            height: 32px;
+            color: #612cf5;
+        }
+
+        .login-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .login-subtitle {
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            color: #0f172a;
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            background-color: #f8fafc;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #612cf5;
+            border-width: 2px;
+            background-color: #ffffff;
+        }
+
+        .form-input::placeholder {
+            color: #94a3b8;
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin-bottom: 24px;
+        }
+
+        .forgot-password a {
+            color: #612cf5;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 14px;
+            background-color: #612cf5;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(97, 44, 245, 0.3);
+            transition: all 0.2s;
+            text-transform: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #4c1dd1;
+            box-shadow: 0 6px 16px rgba(97, 44, 245, 0.4);
+        }
+
+        .login-footer {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .login-footer a {
+            color: #612cf5;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .login-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* View Modes Grid */
+        .view-modes-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            margin: 24px 0;
+        }
+
+        .view-mode-item {
+            text-align: center;
+        }
+
+        .view-mode-item img {
+            width: 100%;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        .view-mode-caption {
+            color: #64748b;
+            font-size: 0.875rem;
+            font-style: italic;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="grid">
+            <!-- Left Column - Guideline Content -->
+            <div class="guideline-content">
+                <!-- Header -->
+                <div class="paper header-paper">
+                    <h1>Research Data Inventory System</h1>
+                    <h3>User Guide & Guidelines</h3>
+                    <p class="text-muted">Learn how to search, discover, and manage research datasets across Savic Lab</p>
+                </div>
+
+                <!-- System Overview -->
+                <div class="paper">
+                    <div class="section-header">
+                        <svg class="section-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        <h2>System Overview</h2>
+                    </div>
+                    <p>The Research Data Inventory System is a catalog that helps you discover and locate research datasets. This system displays metadata and file paths. To access files, access them via 'Data Request Management System' and your own User-based Dashboard based on different type and security level of files.</p>
+                    <ul class="list">
+                        <li class="list-item">
+                            <svg class="list-icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z"/>
+                            </svg>
+                            <div class="list-content">
+                                <strong>Inventory System</strong>
+                                <span>This is a catalog/index system for discovering and locating research datasets. Files remain in their original locations.</span>
+                            </div>
+                        </li>
+                        <li class="list-item">
+                            <svg class="list-icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M10 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2h-8l-2-2z"/>
+                            </svg>
+                            <div class="list-content">
+                                <strong>Filepath Display</strong>
+                                <span>The system shows where files are stored. Use the filepath to access files via Data Request Management System or User-based Dashboard.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Dashboard Overview -->
+                <div class="paper">
+                    <div class="section-header">
+                        <svg class="section-icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z"/>
+                        </svg>
+                        <h2>Dashboard Overview</h2>
+                    </div>
+                    <img src="assets/images/Dashboard.png" alt="Dashboard Overview" class="screenshot">
+                </div>
+
+                <!-- Search and Filter -->
+                <div class="paper">
+                    <div class="section-header">
+                        <svg class="section-icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                        <h2>How to Search and Filter Datasets</h2>
+                    </div>
+                    <img src="assets/images/Search_Filter.png" alt="Search and Filter Interface" class="screenshot">
+                    <p>Use the search bar to find datasets by file name or description. You can also use filters to narrow down results by Data Type, Source, Medication, Added By, Date From, and Sort By options. Combine multiple filters for more precise searches.</p>
+                    <div class="alert alert-warning">
+                        <p><strong>💡 Tip:</strong> Use the "Reset Filters" button to clear all filters at once.</p>
+                    </div>
+                </div>
+
+                <!-- View Modes -->
+                <div class="paper">
+                    <div class="section-header">
+                        <svg class="section-icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
+                        </svg>
+                        <h2>View Modes</h2>
+                    </div>
+                    <p>Toggle between Card View and List View to display datasets in your preferred format. Card View shows key information in an easy-to-scan card layout, while List View provides a tabular format with sortable columns for quick comparison.</p>
+                    <div class="view-modes-grid">
+                        <div class="view-mode-item">
+                            <img src="assets/images/Card_View.png" alt="Card View" class="screenshot">
+                            <div class="view-mode-caption">Card View</div>
+                        </div>
+                        <hr class="divider">
+                        <div class="view-mode-item">
+                            <img src="assets/images/List_View.png" alt="List View" class="screenshot">
+                            <div class="view-mode-caption">List View</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Viewing Details -->
+                <div class="paper">
+                    <div class="section-header">
+                        <svg class="section-icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                        </svg>
+                        <h2>Viewing Dataset Details</h2>
+                    </div>
+                    <div class="screenshot-center">
+                        <img src="assets/images/Detail.png" alt="Dataset Detail Page" class="screenshot screenshot-small">
+                    </div>
+                    <p>Click on any dataset card or table row to view detailed information including complete metadata, related files, edit history, and filepath information.</p>
+                    <div class="alert alert-info">
+                        <p><strong>⚠️ Important:</strong> Use the filepath shown to access files via Data Request Management System or User-based Dashboard.</p>
+                    </div>
+                </div>
+
+                <!-- Edit History -->
+                <div class="paper">
+                    <div class="section-header">
+                        <svg class="section-icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+                        </svg>
+                        <h2>Edit History</h2>
+                    </div>
+                    <p>Track all changes made to a dataset with complete audit trail showing who made the change, when it was made, what field was changed, and the before/after values. Changes can be made via web interface or Excel upload.</p>
+                    <div class="screenshot-center">
+                        <img src="assets/images/Edit_History.png" alt="Edit History" class="screenshot" style="width: 50%;">
+                    </div>
+                </div>
+
+                <!-- Update Panel -->
+                <div class="paper">
+                    <div class="section-header">
+                        <svg class="section-icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+                        </svg>
+                        <h2>Update Panel (with User Authorization)</h2>
+                    </div>
+                    <img src="assets/images/Update_Panel.png" alt="Update Panel" class="screenshot">
+                    <p>The Update Panel allows authorized users to manage datasets, upload Excel files, and configure system settings. Features include adding records manually, batch updates via Excel, downloading all data, downloading templates, and managing system entities (Data Types, Data Sources, Medications).</p>
+                </div>
+            </div>
+
+            <!-- Right Column - Login Form (Sticky) -->
+            <div class="login-sidebar">
+                <div class="paper-login">
+                    <div class="login-header">
+                        <div class="login-icon-circle">
+                            <svg class="login-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="login-title">Welcome Back</h3>
+                        <p class="login-subtitle">Sign in to access your account</p>
+                    </div>
+
+                    <form>
+                        <div class="form-group">
+                            <label class="form-label">Email or Username</label>
+                            <input type="text" class="form-input" placeholder="Enter your email or username">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-input" placeholder="Enter your password">
+                        </div>
+
+                        <div class="forgot-password">
+                            <a href="#">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="btn-primary">Sign In</button>
+
+                        <div class="login-footer">
+                            <p class="text-muted" style="margin: 0;">Need an Account <a href="#">Contact Griffith Gao</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

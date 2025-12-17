@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publication Committee & Tracking System - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(to bottom right, #f0fdf4, #eff6ff, #faf5ff);
+        }
+
+        .green-gradient-btn {
+            background: linear-gradient(to right, #16a34a, #15803d);
+        }
+
+        .green-gradient-btn:hover {
+            background: linear-gradient(to right, #15803d, #166534);
+        }
+
+        .stage-blue {
+            background-color: #dbeafe;
+            color: #1e40af;
+        }
+
+        .stage-yellow {
+            background-color: #fef3c7;
+            color: #78350f;
+        }
+
+        .stage-purple {
+            background-color: #e9d5ff;
+            color: #6b21a8;
+        }
+
+        .stage-green {
+            background-color: #d1fae5;
+            color: #065f46;
+        }
+    </style>
+</head>
+<body class="min-h-screen gradient-bg">
+    <!-- Hero Section -->
+    <div class="bg-white shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center">
+                <img
+                    src="assets/images/image.png"
+                    alt="Publication Tracker Logo"
+                    class="h-24 w-auto mx-auto mb-6"
+                />
+                <h1 class="text-4xl font-bold text-gray-900 mb-3">
+                    Publication Committee & Tracking System
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Streamline collaboration and track your research from idea to publication
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left Column - System Guide -->
+            <div class="lg:col-span-2 space-y-8">
+                <!-- 4-Stage Pipeline -->
+                <section class="bg-white rounded-xl shadow-lg p-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                        <svg class="h-6 w-6 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                        Publication Pipeline
+                    </h2>
+                    <p class="text-gray-600 mb-6">
+                        Our system manages publications through a structured 4-stage process:
+                    </p>
+                    
+                    <!-- Stage Details -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                        <div class="border-2 border-gray-200 rounded-lg p-4 hover:border-green-500 transition-colors">
+                            <div class="flex items-start">
+                                <div class="stage-blue rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg mr-4 flex-shrink-0">
+                                    1
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900 mb-1">
+                                        Stage 1: Ideation
+                                    </h3>
+                                    <p class="text-sm text-gray-600">Submit analysis plans with abstracts, methods, and expected results</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-2 border-gray-200 rounded-lg p-4 hover:border-green-500 transition-colors">
+                            <div class="flex items-start">
+                                <div class="stage-yellow rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg mr-4 flex-shrink-0">
+                                    2
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900 mb-1">
+                                        Stage 2: Review & Team
+                                    </h3>
+                                    <p class="text-sm text-gray-600">Committee approval and co-author recruitment</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-2 border-gray-200 rounded-lg p-4 hover:border-green-500 transition-colors">
+                            <div class="flex items-start">
+                                <div class="stage-purple rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg mr-4 flex-shrink-0">
+                                    3
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900 mb-1">
+                                        Stage 3: Data Analysis
+                                    </h3>
+                                    <p class="text-sm text-gray-600">Analysis execution with Data Team support</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-2 border-gray-200 rounded-lg p-4 hover:border-green-500 transition-colors">
+                            <div class="flex items-start">
+                                <div class="stage-green rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg mr-4 flex-shrink-0">
+                                    4
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900 mb-1">
+                                        Stage 4: Manuscript
+                                    </h3>
+                                    <p class="text-sm text-gray-600">Drafting and refining for submission</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- How It Works -->
+                    <div class="border-t pt-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                            <svg class="h-5 w-5 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                            </svg>
+                            How It Works
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-green-100 rounded-full w-8 h-8 flex items-center justify-center font-bold text-green-700 mr-4 flex-shrink-0">
+                                    1
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">Submit Publication</h4>
+                                    <p class="text-sm text-gray-600">
+                                        Researchers submit analysis plans with all required details
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-green-100 rounded-full w-8 h-8 flex items-center justify-center font-bold text-green-700 mr-4 flex-shrink-0">
+                                    2
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">Committee Review</h4>
+                                    <p class="text-sm text-gray-600">
+                                        Publication Committee reviews and approves or requests revisions
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-green-100 rounded-full w-8 h-8 flex items-center justify-center font-bold text-green-700 mr-4 flex-shrink-0">
+                                    3
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">Co-author Recruitment</h4>
+                                    <p class="text-sm text-gray-600">
+                                        Researchers can request to join approved publications as co-authors
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-green-100 rounded-full w-8 h-8 flex items-center justify-center font-bold text-green-700 mr-4 flex-shrink-0">
+                                    4
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">Track Progress</h4>
+                                    <p class="text-sm text-gray-600">
+                                        Monitor publications through all stages with complete audit trails
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Real-Time Dashboard -->
+                <section class="bg-white rounded-xl shadow-lg p-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                        <svg class="h-6 w-6 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                        Real-Time Dashboard
+                    </h2>
+                    <p class="text-gray-600 mb-4">
+                        Get instant insights into your publication pipeline with live statistics and tracking
+                    </p>
+                    <div class="rounded-lg overflow-hidden border-2 border-gray-200 shadow-md">
+                        <img
+                            src="assets/images/Real-time Dashboard.png"
+                            alt="Real-Time Dashboard showing publication statistics"
+                            class="w-full h-auto"
+                        />
+                    </div>
+                    <p class="text-sm text-gray-500 mt-3 text-center">
+                        Track total papers, in-progress publications, and published works at a glance
+                    </p>
+                </section>
+
+                <!-- Key Features -->
+                <section class="bg-white rounded-xl shadow-lg p-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                        <svg class="h-6 w-6 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Key Features
+                    </h2>
+                    
+                    <!-- PubMed Integration Feature -->
+                    <div class="mb-8">
+                        <div class="flex items-start p-4 border border-gray-200 rounded-lg hover:border-green-500 hover:shadow-md transition-all mb-4">
+                            <div class="bg-green-100 rounded-lg p-2 mr-4 flex-shrink-0">
+                                <svg class="h-5 w-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-gray-900 mb-1">PubMed Integration</h3>
+                                <p class="text-sm text-gray-600 mb-3">
+                                    Automatically sync and track grant-funded publications from PubMed. View publications by grant number, refresh data from PubMed, and access detailed publication information including citations, DOI, and abstracts.
+                                </p>
+                                <div class="rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+                                    <img
+                                        src="assets/images/pubMed.png"
+                                        alt="PubMed Integration - Grant Publications Tracking"
+                                        class="w-full h-auto"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Publication Submission Feature -->
+                    <div class="mb-8">
+                        <div class="flex items-start p-4 border border-gray-200 rounded-lg hover:border-green-500 hover:shadow-md transition-all mb-4">
+                            <div class="bg-green-100 rounded-lg p-2 mr-4 flex-shrink-0">
+                                <svg class="h-5 w-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-gray-900 mb-1">Publication Submission</h3>
+                                <p class="text-sm text-gray-600 mb-3">
+                                    Submit comprehensive analysis plans with abstracts, methods, and expected results
+                                </p>
+                                <div class="rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+                                    <img
+                                        src="assets/images/new_publication.png"
+                                        alt="New Publication Submission Form"
+                                        class="w-[60%] h-auto mx-auto"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Co-author Recruitment Feature -->
+                    <div class="mb-8">
+                        <div class="flex items-start p-4 border border-gray-200 rounded-lg hover:border-green-500 hover:shadow-md transition-all mb-4">
+                            <div class="bg-green-100 rounded-lg p-2 mr-4 flex-shrink-0">
+                                <svg class="h-5 w-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-gray-900 mb-1">Co-author Recruitment</h3>
+                                <p class="text-sm text-gray-600 mb-3">
+                                    Request to join publications and collaborate with research teams
+                                </p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <div class="rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+                                        <img
+                                            src="assets/images/Join-coauthor1.png"
+                                            alt="Co-author Request Interface"
+                                            class="w-full h-auto"
+                                        />
+                                    </div>
+                                    <div class="rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+                                        <img
+                                            src="assets/images/join-coauthor2.png"
+                                            alt="Co-author Request Details"
+                                            class="w-full h-auto"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Management Feature -->
+                    <div class="mb-8">
+                        <div class="flex items-start p-4 border border-gray-200 rounded-lg hover:border-green-500 hover:shadow-md transition-all mb-4">
+                            <div class="bg-green-100 rounded-lg p-2 mr-4 flex-shrink-0">
+                                <svg class="h-5 w-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-gray-900 mb-1">Timeline Management</h3>
+                                <p class="text-sm text-gray-600 mb-3">
+                                    Create and manage timelines for your publications with key milestones
+                                </p>
+                                <div class="rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+                                    <img
+                                        src="assets/images/add_timeline.png"
+                                        alt="Add Timeline Interface"
+                                        class="w-[80%] h-auto mx-auto"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Meeting Management Feature -->
+                    <div class="mb-8">
+                        <div class="flex items-start p-4 border border-gray-200 rounded-lg hover:border-green-500 hover:shadow-md transition-all mb-4">
+                            <div class="bg-green-100 rounded-lg p-2 mr-4 flex-shrink-0">
+                                <svg class="h-5 w-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-gray-900 mb-1">Meeting Management</h3>
+                                <p class="text-sm text-gray-600 mb-3">
+                                    Schedule and manage meetings related to your publications. Attach files and add meeting notes to keep track of important discussions and decisions.
+                                </p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <div class="rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+                                        <img
+                                            src="assets/images/meeting_mgn1.png"
+                                            alt="Meeting Management Interface"
+                                            class="w-full h-auto"
+                                        />
+                                    </div>
+                                    <div class="rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+                                        <img
+                                            src="assets/images/meeting_mgn2.png"
+                                            alt="Meeting Details with File Attachments and Notes"
+                                            class="w-full h-auto"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Objectives with Attachments Feature -->
+                    <div class="mb-8">
+                        <div class="flex items-start p-4 border border-gray-200 rounded-lg hover:border-green-500 hover:shadow-md transition-all mb-4">
+                            <div class="bg-green-100 rounded-lg p-2 mr-4 flex-shrink-0">
+                                <svg class="h-5 w-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-gray-900 mb-1">Project Objectives with Attachments</h3>
+                                <p class="text-sm text-gray-600 mb-3">
+                                    Define and track project objectives with the ability to attach supporting documents, files, and resources
+                                </p>
+                                <div class="rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+                                    <img
+                                        src="assets/images/project_obj_with_attachments.png"
+                                        alt="Project Objectives with File Attachments"
+                                        class="w-[80%] h-auto mx-auto"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Track History and Version Control Feature -->
+                    <div class="mb-8">
+                        <div class="flex items-start p-4 border border-gray-200 rounded-lg hover:border-green-500 hover:shadow-md transition-all mb-4">
+                            <div class="bg-green-100 rounded-lg p-2 mr-4 flex-shrink-0">
+                                <svg class="h-5 w-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-gray-900 mb-1">Track History and Version Control</h3>
+                                <p class="text-sm text-gray-600 mb-3">
+                                    View complete edit history and track all changes made to publications, including who made changes and when
+                                </p>
+                                <div class="rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+                                    <img
+                                        src="assets/images/track_history.png"
+                                        alt="Track History and Version Control - Edit History Interface"
+                                        class="w-full h-auto"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email Notifications Feature -->
+                    <div class="mb-8">
+                        <div class="flex items-start p-4 border border-gray-200 rounded-lg hover:border-green-500 hover:shadow-md transition-all mb-4">
+                            <div class="bg-green-100 rounded-lg p-2 mr-4 flex-shrink-0">
+                                <svg class="h-5 w-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-gray-900 mb-1">Email Notifications</h3>
+                                <p class="text-sm text-gray-600 mb-3">
+                                    Receive automated email alerts for submissions, approvals, co-author requests, stage changes, and other important updates
+                                </p>
+                                <div class="rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+                                    <img
+                                        src="assets/images/email_notify.png"
+                                        alt="Email Notification System"
+                                        class="w-[60%] h-auto mx-auto"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Post-Journal Approval Updates Feature -->
+                    <div class="mb-8">
+                        <div class="flex items-start p-4 border border-gray-200 rounded-lg hover:border-green-500 hover:shadow-md transition-all mb-4">
+                            <div class="bg-green-100 rounded-lg p-2 mr-4 flex-shrink-0">
+                                <svg class="h-5 w-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-gray-900 mb-1">Post-Journal Approval Updates</h3>
+                                <p class="text-sm text-gray-600 mb-3">
+                                    After journal approval, update the formal title, abstract, and upload datasets, code, and other supporting materials
+                                </p>
+                                <div class="rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+                                    <img
+                                        src="assets/images/post_journal.png"
+                                        alt="Post-Journal Approval Updates - Title, Abstract, and File Uploads"
+                                        class="w-full h-auto"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column - Login Card -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-xl shadow-lg p-8 sticky top-8">
+                    <div class="text-center mb-6">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-2">
+                            Ready to Get Started?
+                        </h2>
+                        <p class="text-gray-600 text-sm">
+                            Sign in to access the system
+                        </p>
+                    </div>
+
+                    <!-- Login Button -->
+                    <button
+                        class="group relative w-full flex justify-center items-center py-4 px-6 border border-transparent text-base font-medium rounded-lg text-white green-gradient-btn focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-all shadow-lg hover:shadow-xl"
+                    >
+                        <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        Sign in Here
+                        <svg class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </button>
+
+                    <!-- Account Info -->
+                    <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+                        <h3 class="text-sm font-medium text-gray-900 mb-3">Need an Account?</h3>
+                        <div class="text-xs text-gray-600 space-y-2">
+                            <div class="flex items-start">
+                                <svg class="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <p>Contact Griffith Gao to create an account</p>
+                            </div>
+                            <div class="flex items-start">
+                                <svg class="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <p>Use the email and password provided</p>
+                            </div>
+                            <div class="flex items-start">
+                                <svg class="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <p>Click "Forgot password" to change your password</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="bg-white border-t mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <p class="text-center text-sm text-gray-600">
+                Publication Committee & Tracking System 2025
+            </p>
+        </div>
+    </div>
+</body>
+</html>
