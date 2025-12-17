@@ -235,25 +235,8 @@
             margin-bottom: 32px;
         }
 
-        .login-icon-circle {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            background-color: #ede9fe;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 16px;
-        }
-
-        .login-icon {
-            width: 32px;
-            height: 32px;
-            color: #612cf5;
-        }
-
         .login-title {
-            font-size: 1.75rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: #0f172a;
             margin-bottom: 8px;
@@ -264,91 +247,79 @@
             font-size: 0.875rem;
         }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-label {
-            color: #0f172a;
-            font-weight: 600;
-            font-size: 0.875rem;
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 12px 16px;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            background-color: #f8fafc;
-            font-size: 1rem;
-            transition: all 0.2s;
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: #612cf5;
-            border-width: 2px;
-            background-color: #ffffff;
-        }
-
-        .form-input::placeholder {
-            color: #94a3b8;
-        }
-
-        .forgot-password {
-            text-align: right;
-            margin-bottom: 24px;
-        }
-
-        .forgot-password a {
-            color: #612cf5;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.875rem;
-        }
-
-        .forgot-password a:hover {
-            text-decoration: underline;
-        }
-
         .btn-primary {
             width: 100%;
-            padding: 14px;
-            background-color: #612cf5;
+            padding: 16px;
+            background: linear-gradient(to right, #612cf5, #4c1dd1);
             color: #ffffff;
             border: none;
             border-radius: 8px;
             font-size: 1rem;
-            font-weight: 600;
+            font-weight: 500;
             cursor: pointer;
             box-shadow: 0 4px 12px rgba(97, 44, 245, 0.3);
             transition: all 0.2s;
             text-transform: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
 
         .btn-primary:hover {
-            background-color: #4c1dd1;
+            background: linear-gradient(to right, #4c1dd1, #3b16a8);
             box-shadow: 0 6px 16px rgba(97, 44, 245, 0.4);
         }
 
-        .login-footer {
+        .btn-primary:hover .btn-icon:last-child {
+            transform: translateX(4px);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .account-info {
             margin-top: 24px;
-            padding-top: 24px;
-            border-top: 1px solid #e2e8f0;
-            text-align: center;
+            padding: 16px;
+            background-color: #f9fafb;
+            border-radius: 8px;
         }
 
-        .login-footer a {
-            color: #612cf5;
-            text-decoration: none;
+        .account-info-title {
             font-weight: 500;
+            color: #0f172a;
+            margin-bottom: 12px;
+            font-size: 0.875rem;
         }
 
-        .login-footer a:hover {
-            text-decoration: underline;
+        .account-info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 8px;
         }
+
+        .account-info-icon {
+            width: 16px;
+            height: 16px;
+            color: #612cf5;
+            margin-right: 8px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .account-info-text {
+            color: #64748b;
+            font-size: 0.75rem;
+            line-height: 1.5;
+        }
+
 
         /* View Modes Grid */
         .view-modes-grid {
@@ -511,40 +482,45 @@
                 </div>
             </div>
 
-            <!-- Right Column - Login Form (Sticky) -->
+            <!-- Right Column - Login Card (Sticky) -->
             <div class="login-sidebar">
                 <div class="paper-login">
                     <div class="login-header">
-                        <div class="login-icon-circle">
-                            <svg class="login-icon" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
-                            </svg>
-                        </div>
-                        <h3 class="login-title">Welcome Back</h3>
-                        <p class="login-subtitle">Sign in to access your account</p>
+                        <h3 class="login-title">Ready to Get Started?</h3>
+                        <p class="login-subtitle">Sign in to access the system</p>
                     </div>
 
-                    <form>
-                        <div class="form-group">
-                            <label class="form-label">Email or Username</label>
-                            <input type="text" class="form-input" placeholder="Enter your email or username">
-                        </div>
+                    <button type="button" class="btn-primary">
+                        <svg class="btn-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        Sign in Here
+                        <svg class="btn-icon" fill="currentColor" viewBox="0 0 24 24" style="transition: transform 0.2s;">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                        </svg>
+                    </button>
 
-                        <div class="form-group">
-                            <label class="form-label">Password</label>
-                            <input type="password" class="form-input" placeholder="Enter your password">
+                    <div class="account-info">
+                        <div class="account-info-title">Need an Account?</div>
+                        <div class="account-info-item">
+                            <svg class="account-info-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                            <span class="account-info-text">Contact Griffith Gao to create an account</span>
                         </div>
-
-                        <div class="forgot-password">
-                            <a href="#">Forgot password?</a>
+                        <div class="account-info-item">
+                            <svg class="account-info-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                            <span class="account-info-text">Use the email and password provided</span>
                         </div>
-
-                        <button type="submit" class="btn-primary">Sign In</button>
-
-                        <div class="login-footer">
-                            <p class="text-muted" style="margin: 0;">Need an Account <a href="#">Contact Griffith Gao</a></p>
+                        <div class="account-info-item">
+                            <svg class="account-info-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                            <span class="account-info-text">Click "Forgot password" to change your password</span>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
