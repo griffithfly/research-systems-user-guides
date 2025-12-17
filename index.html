@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Savic Lab Research Systems</title>
+    <title>Savic Lab Research Systems - Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -16,199 +16,466 @@
             background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #eef2f6 100%);
         }
 
-        .card-hover {
-            transition: all 0.3s ease;
+        .sidebar-item {
+            transition: all 0.2s;
         }
 
-        .card-hover:hover {
+        .sidebar-item:hover {
+            background-color: rgba(97, 44, 245, 0.1);
+        }
+
+        .sidebar-item.active {
+            background-color: rgba(97, 44, 245, 0.15);
+            border-left: 3px solid #612cf5;
+        }
+
+        .platform-card {
+            transition: all 0.2s ease;
+        }
+
+        .platform-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
         }
 
-        .system-card {
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        .card-border-purple {
+            border-top: 4px solid #612cf5;
         }
 
-        .pub-card {
+        .card-border-green {
             border-top: 4px solid #16a34a;
         }
 
-        .finder-card {
-            border-top: 4px solid #612cf5;
+        .card-border-blue {
+            border-top: 4px solid #3b82f6;
+        }
+
+        /* Scrollbar styling */
+        .sidebar-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .sidebar-scroll::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        .sidebar-scroll::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+
+        .sidebar-scroll::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
         }
     </style>
 </head>
 <body class="min-h-screen gradient-bg">
-    <!-- Header -->
+    <div class="flex h-screen overflow-hidden">
+        <!-- Left Sidebar Navigation -->
+        <aside class="w-64 bg-white border-r border-gray-200 flex flex-col sidebar-scroll overflow-y-auto">
+            <!-- User Profile Section -->
+            <div class="p-4 border-b border-gray-200">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-white font-semibold text-lg">
+                        R
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-semibold text-gray-900">Research User</div>
+                        <div class="text-sm text-gray-500">Researcher</div>
+                    </div>
+                    <button class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
 
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <!-- Introduction -->
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">
-                Suite of Intelligent Research Management Platforms <br>
-                User Guideline Pages - Demo
-            </h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                This is just HTML for user guideline pages for demo purposes, not real applications. 
-                More systems are under development and will add user guidelines accordingly.
-            </p>
-        </div>
-
-        <!-- System Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <!-- Publication System Card -->
-            <div class="system-card pub-card rounded-xl shadow-lg p-8 card-hover">
-                <div class="flex items-center mb-4">
-                    <div class="bg-green-100 rounded-lg p-3 mr-4">
-                        <svg class="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <!-- RESEARCH PLATFORMS Section -->
+            <div class="p-4">
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">RESEARCH PLATFORMS</div>
+                <nav class="space-y-1">
+                    <a href="finder-user-guideline.html" class="sidebar-item active flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700">
+                        <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                        </svg>
+                        <span class="font-medium">Data Finder</span>
+                    </a>
+                    <a href="pub-user-guideline.html" class="sidebar-item flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700">
+                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                         </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900">
-                        Publication Committee & Tracking System
-                    </h3>
-                </div>
-                
-                <p class="text-gray-600 mb-6">
-                    Streamline collaboration and track your research from idea to publication. Manage publications through 
-                    a structured 4-stage pipeline with committee approval, co-author recruitment, and comprehensive tracking.
-                </p>
-
-                <div class="mb-6">
-                    <h4 class="font-semibold text-gray-900 mb-3">Key Features:</h4>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>4-Stage Publication Pipeline (Ideation → Review → Analysis → Manuscript)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Real-Time Dashboard with Publication Statistics</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>PubMed Integration for Grant-Funded Publications</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Co-author Recruitment & Collaboration Tools</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Timeline Management & Meeting Tracking</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Complete Edit History & Version Control</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <a 
-                    href="pub-user-guideline.html" 
-                    class="inline-flex items-center justify-center w-full py-3 px-6 bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold rounded-lg shadow-lg hover:from-green-700 hover:to-green-800 transition-all"
-                >
-                    <span>View Publication System</span>
-                    <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                </a>
+                        <span class="font-medium">Publication System</span>
+                    </a>
+                    <a href="#" class="sidebar-item flex items-center gap-3 px-3 py-2 rounded-lg text-gray-500">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                        <span class="font-medium">Future App 1</span>
+                    </a>
+                    <a href="#" class="sidebar-item flex items-center gap-3 px-3 py-2 rounded-lg text-gray-500">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                        <span class="font-medium">Future App 2</span>
+                    </a>
+                    <a href="#" class="sidebar-item flex items-center gap-3 px-3 py-2 rounded-lg text-gray-500">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                        <span class="font-medium">Future App 3</span>
+                    </a>
+                </nav>
             </div>
 
-            <!-- Research Data Finder Card -->
-            <div class="system-card finder-card rounded-xl shadow-lg p-8 card-hover">
-                <div class="flex items-center mb-4">
-                    <div class="bg-purple-100 rounded-lg p-3 mr-4">
-                        <svg class="h-8 w-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <!-- USER MANAGEMENT Section -->
+            <div class="p-4 border-t border-gray-200">
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">USER MANAGEMENT</div>
+                <nav class="space-y-1">
+                    <a href="#" class="sidebar-item flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700">
+                        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                        </svg>
+                        <span class="font-medium">List</span>
+                    </a>
+                    <a href="#" class="sidebar-item flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700">
+                        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        <span class="font-medium">Teams</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Data Source & Medications Section -->
+            <div class="p-4 border-t border-gray-200 mt-auto">
+                <div class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Data Mapping Section</div>
+                <nav class="space-y-1">
+                    <a href="#" class="sidebar-item flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700">
+                        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                        </svg>
+                        <span class="font-medium">Data Source</span>
+                    </a>
+                    <a href="#" class="sidebar-item flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700">
+                        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                        </svg>
+                        <span class="font-medium">Medications</span>
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- Top Header Bar -->
+            <header class="bg-white border-b border-gray-200 h-16 flex items-center justify-between px-6">
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                            R
+                        </div>
+                        <span class="font-semibold text-gray-900">Research Platforms</span>
+                    </div>
+                    <div class="flex items-center gap-1 text-sm text-gray-500">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                        <span>Home</span>
+                        <span>></span>
+                        <span class="text-gray-900 font-medium">Dashboard</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <!-- Search Bar -->
+                    <div class="hidden md:flex items-center gap-2 bg-gray-100 rounded-lg px-4 py-2 w-64">
+                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
+                        <input type="text" placeholder="Search..." class="bg-transparent border-none outline-none text-sm flex-1">
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900">
-                        Research Data Finder
-                    </h3>
+                    <!-- Notifications -->
+                    <button class="relative p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                        </svg>
+                        <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                    </button>
+                    <!-- User Menu -->
+                    <button class="flex items-center gap-2 p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-purple-600"></div>
+                    </button>
                 </div>
-                
-                <p class="text-gray-600 mb-6">
-                    Discover and locate research datasets across Savic Lab. A comprehensive inventory system that helps you 
-                    find datasets by searching metadata, filtering by type, source, medication, and more.
-                </p>
+            </header>
 
+            <!-- Main Content -->
+            <main class="flex-1 overflow-y-auto p-6">
+                <!-- Welcome Section -->
                 <div class="mb-6">
-                    <h4 class="font-semibold text-gray-900 mb-3">Key Features:</h4>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Advanced Search & Filter Capabilities</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Card View & Table View Display Modes</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Complete Dataset Metadata & Related Files</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Batch Excel Upload & Manual Record Entry</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Edit History Tracking & Audit Trail</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Data Type, Source & Medication Management</span>
-                        </li>
-                    </ul>
+                    <h1 class="text-3xl font-bold text-gray-900 mb-2">Suite of Intelligent Research Management Platforms</h1>
+                    <p class="text-lg text-gray-600 mb-2">User Guideline Pages - Demo</p>
+                    <p class="text-gray-600">
+                        This is just HTML for user guideline pages for demo purposes, not real applications. 
+                        More systems are under development and will add user guidelines accordingly.
+                    </p>
                 </div>
 
-                <a 
-                    href="finder-user-guideline.html" 
-                    class="inline-flex items-center justify-center w-full py-3 px-6 bg-gradient-to-r from-purple-600 to-purple-700 text-white font-semibold rounded-lg shadow-lg hover:from-purple-700 hover:to-purple-800 transition-all"
-                >
-                    <span>View Data Finder System</span>
-                    <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </main>
+                <!-- Platform Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Data Finder Card -->
+                    <a href="finder-user-guideline.html" class="platform-card bg-white rounded-lg shadow-md card-border-purple p-6 cursor-pointer block">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Research Data Finder</h3>
+                                    <span class="text-xs text-green-600 font-medium bg-green-50 px-2 py-1 rounded">Active</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Discover and locate research datasets across the research team. A inventory system that helps you 
+                            find datasets by searching metadata, filtering by type, source, medication, and more.
+                        </p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-900 text-sm mb-2">Key Features:</h4>
+                            <ul class="space-y-1.5 text-xs text-gray-600">
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>Advanced Search & Filter Capabilities</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>Card View & Table View Display Modes</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>Complete Dataset Metadata & Related Files</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>Batch Excel Upload & Manual Record Entry</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>Edit History Tracking & Audit Trail</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>Data Type, Source & Medication Management</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="space-y-2 mb-4 pt-3 border-t border-gray-200">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs text-gray-600">Total Datasets</span>
+                                <span class="text-sm font-semibold text-gray-900">123</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs text-gray-600">Data Types</span>
+                                <span class="text-sm font-semibold text-gray-900">12</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs text-gray-600">Last Updated</span>
+                                <span class="text-xs font-medium text-gray-700">2 hours ago</span>
+                            </div>
+                        </div>
+                        <div class="w-full bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2">
+                            <span>View User Guideline</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </div>
+                    </a>
 
-    <!-- Footer -->
-    <footer class="bg-white border-t mt-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <p class="text-center text-sm text-gray-600">
-                Savic Lab Research Systems © 2025
-            </p>
+                    <!-- Publication System Card -->
+                    <a href="pub-user-guideline.html" class="platform-card bg-white rounded-lg shadow-md card-border-green p-6 cursor-pointer block">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Publication Committee & Tracking System</h3>
+                                    <span class="text-xs text-green-600 font-medium bg-green-50 px-2 py-1 rounded">Active</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Streamline collaboration and track your research from idea to publication. Manage publications through 
+                            a structured 4-stage pipeline with committee approval, co-author recruitment, tracking, and version control.
+                        </p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-900 text-sm mb-2">Key Features:</h4>
+                            <ul class="space-y-1.5 text-xs text-gray-600">
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>4-Stage Publication Pipeline</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>Real-Time Dashboard & Statistics</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>PubMed Integration</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>Co-author Recruitment & Collaboration</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>Timeline & Meeting Management</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>Edit History & Version Control</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="space-y-2 mb-4 pt-3 border-t border-gray-200">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs text-gray-600">Total Papers</span>
+                                <span class="text-sm font-semibold text-gray-900">123</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs text-gray-600">In Review</span>
+                                <span class="text-sm font-semibold text-gray-900">12</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs text-gray-600">Published</span>
+                                <span class="text-sm font-semibold text-gray-900">111</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs text-gray-600">Last Updated</span>
+                                <span class="text-xs font-medium text-gray-700">1 day ago</span>
+                            </div>
+                        </div>
+                        <div class="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2">
+                            <span>View User Guideline</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </div>
+                    </a>
+
+                    <!-- Development Process Card -->
+                    <div class="platform-card bg-white rounded-lg shadow-md card-border-blue p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Future Apps</h3>
+                                    <span class="text-xs text-blue-600 font-medium bg-blue-50 px-2 py-1 rounded">Ongoing</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Continuous development and improvement of research management platforms. New features and systems are being 
+                            developed to enhance research collaboration and data management capabilities.
+                        </p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-900 text-sm mb-2">Development Phases:</h4>
+                            <ul class="space-y-1.5 text-xs text-gray-600">
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span>Phase 1: Core Platforms (Active)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span>Phase 2: Enhanced Features (In Progress)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span>Phase 3: Integration & Automation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span>Phase 4: Advanced Analytics</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span>Phase 5: New Platform Development</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span>User Feedback & Iteration</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="space-y-2 mb-4 pt-3 border-t border-gray-200">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs text-gray-600">Active Systems</span>
+                                <span class="text-sm font-semibold text-gray-900">2</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs text-gray-600">In Development</span>
+                                <span class="text-sm font-semibold text-gray-900">3+</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs text-gray-600">Last Update</span>
+                                <span class="text-xs font-medium text-gray-700">Ongoing</span>
+                            </div>
+                        </div>
+                        <div class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                            <span>Coming Soon</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </main>
         </div>
-    </footer>
+    </div>
 </body>
 </html>
-
