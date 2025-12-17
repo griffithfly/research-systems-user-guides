@@ -10,13 +10,13 @@ This repository contains HTML demo pages showcasing user guidelines for Solution
 
 ## 📋 Overview
 
-This is a demonstration repository containing interactive HTML pages for user guidelines. **This is not the actual application code** - these are standalone HTML files designed to showcase the user interface and provide documentation for:
+### Dashboard-Style Landing Page (`index.html`)
+A dashboard-style interface that serves as the central hub for accessing different research platforms. Features include:
 
-1. **Publication Committee & Tracking System** - User guidelines and login page
-2. **Research Data Finder** - User guidelines and login page
+- **Sidebar Navigation** - Quick access to all research platforms and management tools
+- **Platform Cards** - Visual overview of each system with key metrics and features
+- **Responsive Design** - Works seamlessly on desktop, tablet, and mobile devices
 
-More systems are under development and will have user guidelines added accordingly.
+## 🚀 Demo
 
-## 🚀 Quick Start
-
-Simply open `index.html` in your web browser to view the landing page with links to both systems.
+Visit the GitHub Pages URL: https://griffithfly.github.io
